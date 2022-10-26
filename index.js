@@ -11,10 +11,12 @@ app.get('/', (req, res) => {
     res.send('server is running')
 });
 
+// all courses api link
 app.get('/courses', (req, res) => {
     res.send(courses)
 })
 
+// single course api link dynamically
 app.get('/courses/:id', (req, res) => {
     const id = parseInt(req.params.id)
     const selectedCourse = courses.find(course => course.id === id);
